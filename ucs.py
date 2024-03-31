@@ -5,6 +5,13 @@ graph = utils.build_graph(edgeFile)
 
 def ucs(start, end):
     # Begin your code (Part 3)
+    '''
+    The Uniform Cost Search algorithm uses a priority queue, and distance from starting node to current node as the priority.
+    Like the queue implementation of BFS, for each iteration the top element of the priority queue is inspected, 
+    then for each child node it's priority is calculated then put into the priority queue along with the child node
+    
+    '''
+
     visited = set()
     Q = PriorityQueue()
     Q.put((0, [start]))

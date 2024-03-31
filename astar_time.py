@@ -30,6 +30,13 @@ def compute_time_heuristic(node, end):
 
 def astar_time(start, end):
     # Begin your code (Part 6)
+    '''
+    To implement a* with time as heuristic requires a new heuristic function. 
+    However information such as coordinates of nodes, road distribution isn't available, therefore I utilized the available distance heuristic.
+    The time heuristic of each node is calculated by (distance heuristic / average speed limit of all outgoing edges of the current node)
+    the reason I chose average speed limit of all outgoing edges of the current node, instead of average speed limit of all edges,
+    is because I think it however much captures the different possible paths that can be taken forom different nodes.
+    '''
     start = str(start)
     end = str(end)
 

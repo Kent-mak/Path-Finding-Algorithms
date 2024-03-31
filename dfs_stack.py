@@ -7,6 +7,11 @@ graph = build_graph(edgeFile)
 
 def dfs(start, end):
     # Begin your code (Part 2)
+    '''
+    The Stack implementation of DFS is reminiscent of the queue implementation of BFS, since the stack accrately describes the process of DFS.
+    While the stack isn't empty, inspect the top element, then push all of its edges to non-visited nodes into the stack.  
+    Implementation detail for recording path is that instead of single nodes, each element in the stack is the entire path to said node. 
+    '''
     visited = set()
     
     visited.add(str(start))

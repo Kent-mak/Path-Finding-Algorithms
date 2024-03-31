@@ -1,4 +1,4 @@
-from utils import build_graph, check_duplicate
+from utils import build_graph
 import sys
 
 
@@ -10,30 +10,30 @@ visited = set()
 
 def dfs(start, end):
     # Begin your code (Part 2)
+    '''
+    The recursive implementation of DFS intuitively describes the behavior of DFS at each node, which is inspect, then perform DFS for all childeren nodes.
+    A point worth noting is that python has recursion limit set at 1000, however for certain cases the recursive method may exceed its max recursion depth.
+    therefore "sys.setrecursionlimit(23657)" can be added to the main function.
+    '''
     start = str(start)
     end = str(end)
 
     visited.add(start)
     
-    # print(f'{start}: ')
     if graph.get(start) is None:
-        # print(start)
         return [], 0, 0
 
 
     for edge in graph[start]:
-        # print(f'{start}: {edge['end']}')
         if edge['end'] in visited:
             continue
 
         if edge['end'] == end:
-            # print(edge['end'])
             return [int(edge['start']), int(edge['end'])], float(edge['distance']), len(visited)+1
         
         cur_path, cur_dist, num_visited = dfs(int(edge['end']), end)
         
         if len(cur_path) > 0 :   
-            # print(edge['start'])
             return [int(edge['start'])]+cur_path, cur_dist + float(edge['distance']), num_visited
         
     

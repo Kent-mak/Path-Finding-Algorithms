@@ -15,6 +15,12 @@ class Node:
 
 def astar(start, end):
     # Begin your code (Part 4)
+    '''
+    The a* algorithm is similar to uniform cost search in the sense that both uses a priority queue,
+    However the priority is define as (the distance from current node to the starting node + heuristic value).
+    the heuristic value in this case is the approximate distance from corrent node to the ending node
+    
+    '''
     start = str(start)
     end = str(end)
     open = PriorityQueue()

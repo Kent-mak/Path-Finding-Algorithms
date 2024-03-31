@@ -6,6 +6,11 @@ edgeFile = 'edges.csv'
 
 def bfs(start, end):
     # Begin your code (Part 1)
+    '''
+    Basic BFS algorithm. Adding all neighboring non-visited edges to the queue, popping out the top element for inspection.
+    However instead of saving nodes I used edges, since it allows for convenience in calculating distance of a a path.
+    In addition, to record the path taken to reach a edge, I saved entire paths in the queue instead of single edges.  
+    '''
 
     graph = build_graph(edgeFile)
 
